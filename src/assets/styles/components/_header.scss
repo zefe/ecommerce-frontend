@@ -21,11 +21,12 @@
     display: flex;
     align-items: center;
     margin-right: 35px;
+    padding-top: 5px;
 }
 .header__user {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 5px;
     span{
         padding-left: 10px;
         color: $color-gray;

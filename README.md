@@ -3,7 +3,7 @@ Demo Web application using reactjs
 
 ## Demo
 
-[Watch the LIVE project ](https://ishopdemo.app/)
+[Watch the LIVE project ](https://ishop-app-2de9a.web.app/)
 
 
 ![iShop web app home](https://github.com/zefe/ecommerce-frontend/blob/main/src/assets/images/home.png)

@@ -60,9 +60,12 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="header__logout">
-                    <Link to="/login" onClick={ handleLogout }>
-                        <IconLogout />
-                    </Link>
+                    {
+                        userInfo && 
+                            <Link to="/login" onClick={ handleLogout }>
+                                <IconLogout />
+                            </Link>
+                    }
                 </div>
             </div>
         </header>
