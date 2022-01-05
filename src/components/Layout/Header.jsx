@@ -22,7 +22,9 @@ export const Header = () => {
             </div>
             <div className="header__info">
                 <div className="header__cart">
-                    <IconCart />
+                    <Link to ="/cart">
+                        <IconCart />
+                    </Link>
                 </div>
                 <div className="header__user">
                         <IconUser />

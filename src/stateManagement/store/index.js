@@ -5,9 +5,18 @@ import { rootReducer } from '../reducers/rootReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
+const cartItemsFromStorage = localStorage.getItem('cartItems') ?
+    JSON.parse(localStorage.getItem('cartItems')) : []
+
+const initialState = {
+    cart: {
+        cartItems: cartItemsFromStorage,
+    },
+}
 
 export const store = createStore(
     rootReducer, //All Reducers
+    initialState,
     composeEnhancers(
         applyMiddleware( thunk )
     )

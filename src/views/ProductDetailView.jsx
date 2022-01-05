@@ -10,21 +10,21 @@ import Rating from '../components/common/Rating';
 import { Loading } from '../components/common/Loading';
 import  Message  from '../components/common/Message';
 
-export const ProductDetailView = ({ match }) => {    
+export const ProductDetailView = ({ history  }) => {  
+    const { id } = useParams();
+    const [qty, setQty] = useState(1)
+
     const dispatch = useDispatch();
     const productDetails = useSelector(state => state.productDetails);
     const { error, loading, product } = productDetails;
 
-    const [qty, setQty] = useState(1)
-    const { id } = useParams();
-    //const product = products.find((p) => p._id == id)
     
     useEffect(() => {
         dispatch(listProductDetails(id))
     }, [dispatch])
 
     const addToCartHandler = () => {
-        alert("add product to cart")
+        history.push(`/cart/${id}?qty=${qty}`)
     }
 
 

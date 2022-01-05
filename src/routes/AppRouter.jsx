@@ -9,6 +9,7 @@ import { RegisterView } from '../views/RegisterView';
 import { HomeView } from '../views/HomeView';
 import { ProductDetailView } from '../views/ProductDetailView';
 import { Header }from '../components/Layout/Header'
+import { CartView } from '../views/CartView';
 
 export const AppRouter = () => {
 
@@ -23,10 +24,15 @@ export const AppRouter = () => {
                     path="/" 
                     component={ HomeView } 
                     isAuthenticated={ false }
-                />                 
+                />
                 <PublicRoute
                     path="/product/:id" 
                     component={ ProductDetailView } 
+                    isAuthenticated={ false }
+                />      
+                <PublicRoute
+                    path="/cart/:id?" 
+                    component={ CartView } 
                     isAuthenticated={ false }
                 />                
                 <PublicRoute
