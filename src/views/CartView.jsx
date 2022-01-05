@@ -6,6 +6,7 @@ import { Container, Row, Col, ListGroup, Image, Form, Button, Card } from 'react
 import  Message  from '../components/common/Message';
 
 import { addToCart, removeFromCart } from '../stateManagement/actions/cartActions';
+import { urlApi } from '../config';
 
 export const CartView = ({location, history}) => {
     const { id: productId } = useParams();
@@ -44,7 +45,7 @@ export const CartView = ({location, history}) => {
                                     <ListGroup.Item key={item.product}>
                                         <Row>
                                             <Col md={2}>
-                                                <Image src={`http://127.0.0.1:8000${item.image}`} alt={item.name} fluid rounded />
+                                                <Image src={`${urlApi}${item.image}`} alt={item.name} fluid rounded />
                                             </Col>
                                             <Col md={3}>
                                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
