@@ -4,15 +4,12 @@
     flex-direction: column;
     h1 {
         padding-top: 4%;
-        padding-left: 10%;
-        padding-right: 10%;
         font-size: 1.7rem;
     }
 }
 
 .products__items {
     width: 100%;
-    padding: 0 10%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 3rem;

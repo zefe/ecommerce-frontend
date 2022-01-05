@@ -9,7 +9,7 @@ export const Product = ({ product }) => {
     return (
         <div className="products__item">
             <Link to={`/product/${product._id}`}>
-                <img src={ product.image } alt={ product.name }  />
+                <img src={`http://127.0.0.1:8000${product.image}`} alt={ product.name }  />
             </Link>
             <Link to={`/product/${product._id}`}>
                 <p>{ product.name }</p>

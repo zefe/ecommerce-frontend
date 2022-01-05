@@ -21,7 +21,7 @@ export const ProductDetailView = ({ match }) => {
             <Link to='/' className='btn btn-light my-3'>Back</Link>
             <Row>                
                 <Col md={6}>
-                    <Image src={product.image} alt={product.name} fluid />
+                    <Image src={`${product.image}`} alt={product.name} fluid />
                 </Col>
                 <Col md={3}>
                     <ListGroup variant="flush">
