@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 
 
 import { ReactComponent as IconUser }  from '../../assets/icons/user_icon.svg';
@@ -8,6 +10,11 @@ import { ReactComponent as IconCart }  from '../../assets/icons/cart_icon.svg';
 import { ReactComponent as Logo }  from '../../assets/icons/logo.svg';
 
 export const Header = () => {
+
+    const dispatch = useDispatch()
+
+    const userLogin = useSelector(state => state.userLogin);
+    const { userInfo } = userLogin;
 
     const handleLogout = () => {
         alert("Are you sure to logout?")
@@ -29,8 +36,22 @@ export const Header = () => {
                 <div className="header__user">
                         <IconUser />
                     <div>
-                        <span>Welcome!</span>
-                        <p>Juanito flores</p>
+                    {userInfo ? 
+                        <>
+                            <span>Welcome {userInfo.name}</span>
+                            
+                            <Link to='/dashboard'>
+                                <p>Dashboard</p>
+                            </Link> 
+                        </>
+                        : 
+                        <>
+                            <span>Welcome guest!</span>
+                            <Link to='/login'>
+                                <p>Login</p>
+                            </Link>                    
+                        </>
+                      }
                     </div>
                 </div>
                 <div className="header__logout">
