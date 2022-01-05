@@ -10,15 +10,15 @@ import { ReactComponent as Logo }  from '../../assets/icons/logo.svg';
 export const Header = () => {
 
     const handleLogout = () => {
-        alert("logout")
+        alert("Are you sure to logout?")
     }
 
     return (
         <header className="header">
             <div className="header__logo">
-                <a href ="/">
+                <Link to ="/">
                     <Logo />
-                </a >
+                </Link >
             </div>
             <div className="header__info">
                 <div className="header__cart">
@@ -32,9 +32,9 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="header__logout">
-                    <a href="/login" onClick={ handleLogout }>
+                    <Link to="/login" onClick={ handleLogout }>
                         <IconLogout />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </header>
