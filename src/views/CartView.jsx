@@ -26,7 +26,7 @@ export const CartView = ({location, history}) => {
     }
 
     const checkoutHandler = () => {
-        history.push('/login?redirect=shipping')
+        alert("coming shipping")
     }
 
     return (

@@ -8,8 +8,17 @@ const login = (email, password) => {
     )
 }
 
+const register = (name, email, password) => {
+    return instance.post(
+        `/api/users/register/`,        
+        { 'name': name, 'email': email, 'password': password },
+        config    
+    )
+}
+
 
 
 export default {
     login,
+    register,
 }

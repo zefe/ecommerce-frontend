@@ -42,11 +42,15 @@ export const LoginView = ({ location, history }) => {
     }
 
     return (
-        <div className="login">
+        <>
+            
+            {loading ? <Loading />
+                :
+                <div className="conatiner-view">
             <div className="logo">
                 <img src={ logo } alt="Logo" />
             </div>
-            {loading && <Loading />}
+            
             <form onSubmit={ handleLogin } className="form">
                 <div className="form-group"> 
                     <small style={{color:'red'}}>{error}</small>
@@ -89,5 +93,9 @@ export const LoginView = ({ location, history }) => {
             </Row>
             </form>
         </div>
+                
+            }
+        </>
+        
     )
 }

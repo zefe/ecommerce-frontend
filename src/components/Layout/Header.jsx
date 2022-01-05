@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
+import { logout } from '../../stateManagement/actions/userActions';
 
 import { ReactComponent as IconUser }  from '../../assets/icons/user_icon.svg';
 import { ReactComponent as IconLogout }  from '../../assets/icons/icon-logout.svg';
@@ -17,7 +17,7 @@ export const Header = () => {
     const { userInfo } = userLogin;
 
     const handleLogout = () => {
-        alert("Are you sure to logout?")
+        dispatch(logout())
     }
 
     return (
@@ -47,9 +47,14 @@ export const Header = () => {
                         : 
                         <>
                             <span>Welcome guest!</span>
-                            <Link to='/login'>
-                                <p>Login</p>
-                            </Link>                    
+                            <div className='links'>
+                                <Link to='/login'>
+                                    <p>Login  |</p> 
+                                </Link>        
+                                <Link to='/register'>
+                                    <p>Register</p>
+                                </Link> 
+                            </div>                   
                         </>
                       }
                     </div>
