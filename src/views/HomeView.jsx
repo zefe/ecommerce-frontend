@@ -17,8 +17,6 @@ export const HomeView = () => {
         dispatch(listProducts())
     }, [dispatch])
 
-    console.log(products)
-
     return (
         <div className="home">
             <Container>                

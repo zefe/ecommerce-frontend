@@ -22,3 +22,27 @@ export const listProducts = () => {
     }
 
 }
+
+export const listProductDetails = (id) => {
+    return async (dispatch) => {
+        try {
+            dispatch({ type: types.PRODUCT_DETAILS_LOADING })
+    
+            const res = await productServices.getProduct(id);
+            const data = res.data;
+    
+            dispatch({
+                type: types.PRODUCT_DETAILS_SUCCESS,
+                payload: data
+            })
+    
+        } catch (error) {
+            dispatch({
+                type: types.PRODUCT_DETAILS_ERROR,
+                payload: error.response && error.response.data.detail
+                    ? error.response.data.detail
+                    : error.message,
+            })
+        }
+    }
+}
