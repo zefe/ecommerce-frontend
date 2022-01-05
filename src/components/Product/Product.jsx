@@ -1,12 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 import Rating from '../common/Rating';
-import {Button, Row, Col} from 'react-bootstrap';
+
+import products from '../../products';
 
 export const Product = ({ product }) => {
     return (
         <div className="products__item">
-            <img src={ product.image } alt={ product.name }  />
-            <p>{ product.name }</p>
+            <Link to={`/product/${product._id}`}>
+                <img src={ product.image } alt={ product.name }  />
+            </Link>
+            <Link to={`/product/${product._id}`}>
+                <p>{ product.name }</p>
+            </Link>
             <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />
             <h2>$ { product.price} </h2>
         </div>
